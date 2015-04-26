@@ -1,0 +1,39 @@
+<h1> Cookbook for Getting and Cleaning Data Course Project </h1> 
+
+
+<h2> "a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md </h2>
+
+
+<strong> Variables used: </strong>
+<ul>
+	<li>*****Data : variables used to store the training and testing retrieved from the directory files</li>
+	<li>*****Label : variables used to store the training and testing labels retrieved from the directory files</li>
+	<li>***Comp: variables used to store the binded testing and training data</li>
+	<li>featuresList: variable used to store the list of available features</li>
+	<li>selecFeatures: variable used to store list of features that have MEAN or STD </li>
+	<li>actList: list of activities with modified names </li>
+	<li>firstComp: data set that has the merged data with no means (Raw). </li>
+	<li>lengths*: used to store temporal dimention needs for FOR loop </li>
+	<li>meanComp: data frame used to store the final output, with means of each subject per activity</li>
+</ul>
+<strong> The Data used can be found on the links provided on the README.mdown. Below is a list of the directory files: </strong>
+<ul>
+	<li>"train/subject_train.txt": subject training set</li>
+	<li>"test/Subject_test.txt": subject testing set</li>
+	<li>"train/y_train.txt": labels for training set</li>
+	<li>"test/y_test.txt": labels for testing set</li>
+	<li>"train/X_train.txt": row info for training set </li>
+	<li>"test/X_test.txt": rown info for testing set </li>
+	<li>"features.txt": list of features used in set </li>
+	<li>"activity_labels.txt": list of activities available </li>
+	<li>meanTable: output table produced with mean of each subject for each activity </li>
+</ul>
+
+<strong> Main steps and transformations:  </strong>
+<ul>
+	<li> Step 1: Read all files from the corresponding folders, assuming the working directory is set to the default unzipped folder. Basic combinations of the data files done with rbind. </li>
+	<li>Step 2: read the features and select only the ones using STD and MEAN from the entire list. Grep used to find the matches. Relevant features are stored using logical indexing. GREP and logical indexing are used.  </li>
+	<li> Step 3: activities are read from the  file and some minor modifications are done. Modifications include changing of case, reordering, and variable consolidation using functions such as substr, toupper,tolower, read.table.  </li>
+	<li>Step 4: Change the names of features and add them from the list in previous set. Functions used include names() and colnames(). </li>
+	<li>Step 5: Use the logical indexing of activity and subject, finds means, and saves to predetermined data frame. Functions used include cbind, length(), dim, FOR loop, and write.table()</li>
+</ul>
